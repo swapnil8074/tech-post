@@ -4,6 +4,10 @@ const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
+const morgan = require("morgan");
+
+// logging url requests
+app.use(morgan("dev"));
 
 // adding middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,12 +31,9 @@ const indexRoutes = require("./routes/index");
 const manageRoutes = require("./routes/manage");
 const apiCategoryRoutes = require("./routes/api/categories");
 
-
 app.use("/", indexRoutes);
 app.use("/manage", manageRoutes);
 app.use("/api/category", apiCategoryRoutes);
-
-
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

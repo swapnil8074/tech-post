@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../model/post");
 const { getIdBYcategoryName } = require("../utils/urlHelpers");
+const upload = require('../config/fileUpload');
 
+
+// GET - home page
 router.get("/", (req, res) => {
   let data = {};
   res.render("index", data);
