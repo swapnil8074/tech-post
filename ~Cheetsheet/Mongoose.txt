@@ -1,0 +1,3 @@
+// .exec(err, docArray)   ---> Exec function returns array of all the document by find ,method.
+
+
