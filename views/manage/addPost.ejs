@@ -1,39 +1,45 @@
 <%- include ../_partials/header %>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2>Add Post</h2>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-title">
+                <h2>Add Post</h2>
             </div>
-
-            <div class="col-md-8">
-                <form action="/manage/post/add" method="post">
-                    <div class="form-group">
-                        <label for="title">Post Title:</label>
-                        <input type="text" class="form-control" name="title" id="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category:</label>
-                        <select class="form-control" id="category" name="category">
-                            <% for( let i = 0; i < categories.length; i++ ) { %>
-                            <option value="<%= categories[i]._id %>"><%= categories[i].title %></option>
-                            <% } %>
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="body">Body:</label>
-                        <textarea class="form-control" rows="5" name="body" id="body"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-
-
-
         </div>
-    </div>
 
-    <%- include ../_partials/footer %>
+        <div class="col-md-8">
+            <form action="/manage/post/add" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Post Title:</label>
+                    <input type="text" class="form-control" name="title" id="title">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select class="form-control" id="category" name="category">
+                        <% for( let i = 0; i < categories.length; i++ ) { %>
+                        <option value="<%= categories[i]._id %>">
+                            <%= categories[i].title %>
+                        </option>
+                        <% } %>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postImage">Image:</label>
+                    <input type="file" name="image" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="body">Body:</label>
+                    <textarea class="form-control" rows="5" name="body" id="body"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+<%- include ../_partials/footer %>
