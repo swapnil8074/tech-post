@@ -1,193 +1,194 @@
 <%- include _partials/header %>
-<!-- section -->
-<div class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-8">
-				<div class="row">
-					<!-- post -->
-					<div class="col-md-12">
-						<div class="post post-thumb">
-							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[0]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[0].image)? posts[0].image : 'no-image.png') %>"
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<!-- post -->
+						<div class="col-md-12">
+							<div class="post post-thumb">
+								<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[0]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[0].image)? posts[0].image : 'no-image.png') %>"
 								 alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="<%= '/posts/'+id %>">
-										<%= posts[0].category.title %>
-									</a>
-									<span class="post-date">March 27, 2018</span>									
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-2" href="<%= '/posts/'+id %>">
+											<%= posts[0].category.title %>
+										</a>
+										<span class="post-date">March 27, 2018</span>
+									</div>
+									<h3 class="post-title">
+										<a href="<%= '/posts/'+catUrlName+'/'+posts[0]._id %>">
+											<%= posts[0].title %>
+										</a>
+									</h3>
 								</div>
-								<h3 class="post-title">
-									<a href="<%= '/posts/'+catUrlName+'/'+posts[0]._id %>">
-										<%= posts[0].title %>
-									</a>
-								</h3>
 							</div>
 						</div>
-					</div>
-					<!-- /post -->
+						<!-- /post -->
 
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post">
-							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[1]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[1].image)? posts[1].image : 'no-image.png') %>"
+						<!-- post -->
+						<div class="col-md-6">
+							<div class="post">
+								<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[1]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[1].image)? posts[1].image : 'no-image.png') %>"
 								 alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="<%= '/posts/'+id %>">
-										<%= posts[1].category.title %>
-									</a>
-									<span class="post-date">March 27, 2018</span>
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-2" href="<%= '/posts/'+id %>">
+											<%= posts[1].category.title %>
+										</a>
+										<span class="post-date">March 27, 2018</span>
+									</div>
+									<h3 class="post-title">
+										<a href="<%= '/posts/'+catUrlName+'/'+posts[1]._id %>">
+											<%= posts[1].title %>
+										</a>
+									</h3>
 								</div>
-								<h3 class="post-title">
-									<a href="<%= '/posts/'+catUrlName+'/'+posts[1]._id %>">
-										<%= posts[1].title %>
-									</a>
-								</h3>
 							</div>
 						</div>
-					</div>
-					<!-- /post -->
+						<!-- /post -->
 
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post">
-							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>"><img src="<%= '/uploads/pictures/' + ((posts[2].image)? posts[2].image : 'no-image.png') %>"
+						<!-- post -->
+						<div class="col-md-6">
+							<div class="post">
+								<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>"><img src="<%= '/uploads/pictures/' + ((posts[2].image)? posts[2].image : 'no-image.png') %>"
 								 alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="<%= '/posts/'+id %>">
-										<%= posts[2].category.title %>
-									</a>
-									<span class="post-date">March 27, 2018</span>
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-2" href="<%= '/posts/'+id %>">
+											<%= posts[2].category.title %>
+										</a>
+										<span class="post-date">March 27, 2018</span>
+									</div>
+									<h3 class="post-title">
+										<a href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>">
+											<%= posts[2].title %>
+										</a>
+									</h3>
 								</div>
-								<h3 class="post-title">
-									<a href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>">
-										<%= posts[2].title %>
-									</a>
-								</h3>
 							</div>
 						</div>
-					</div>
-					<!-- /post -->
+						<!-- /post -->
 
-					<div class="clearfix visible-md visible-lg"></div>
-					<!-- ad -->
-					<div class="col-md-12">
+						<div class="clearfix visible-md visible-lg"></div>
+						<!-- ad -->
+						<div class="col-md-12">
 							<div class="section-row">
 								<a href="#">
 										<img class="img-responsive center-block" src="/img/ad-2.jpg" alt="">
 									</a>
 							</div>
 						</div>
-					<!-- ad 
+						<!-- ad 
 
 					 post -->
 
-					<% for(i = 3; i<posts.length;i++){ %>
-					<div class="col-md-12">
-						<div class="post post-row">
-							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[i]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[i].image)? posts[i].image : 'no-image.png') %>"
+						<% for(i = 3; i<posts.length;i++){ %>
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[i]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[i].image)? posts[i].image : 'no-image.png') %>"
 								 alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="<%= '/posts/'+catUrlName %>">
-										<%= posts[0].category.title %></a>
-									<span class="post-date">March 27, 2018</span>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-2" href="<%= '/posts/'+catUrlName %>">
+												<%= posts[0].category.title %>
+											</a>
+											<span class="post-date">March 27, 2018</span>
+										</div>
+										<h3 class="post-title">
+											<a href="<%= '/posts/'+catUrlName+'/'+posts[i]._id %>">
+												<%= posts[i].title %>
+											</a>
+										</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+											magna aliqua. Ut enim ad minim veniam...</p>
+									</div>
 								</div>
-								<h3 class="post-title"><a href="<%= '/posts/'+catUrlName+'/'+posts[i]._id %>">
-										<%= posts[i].title %></a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-									dolore magna
-									aliqua. Ut enim ad minim veniam...</p>
 							</div>
-						</div>
-					</div>
-					<% } %>
-					<!-- /post -->
+							<% } %>
+								<!-- /post -->
 
 
 
 
 
 
-					<div class="col-md-12">
-						<div class="section-row">
-							<button class="primary-button center-block">Load More</button>
-						</div>
+								<div class="col-md-12">
+									<div class="section-row">
+										<button class="primary-button center-block">Load More</button>
+									</div>
+								</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="col-md-4">
-				<!--ad -->
-				<!--<div class="aside-widget text-center">
+				<div class="col-md-4">
+					<!--ad -->
+					<!--<div class="aside-widget text-center">
 						<a href="#" style="display: inline-block;margin: auto;">
 								<img class="img-responsive" src="/img/ad-1.jpg" alt="">
 							</a>
 					</div>-->
-				<!-- /ad -->
-				<div class="aside-widget">
-					<div class="section-title">
-						<h2>Most Read</h2>
+					<!-- /ad -->
+					<div class="aside-widget">
+						<div class="section-title">
+							<h2>Most Read</h2>
+						</div>
+						<div id="most-viewed-posts" class="">
+							<img src="/img/loader.gif" width="50px" alt="">
+						</div>
 					</div>
-				<div id="most-viewed-posts" class="">
-					<img src="/img/loader.gif"  width="50px" alt="">
-				</div>
-				</div>
-				<!-- catagories -->
-				<div class="aside-widget">
-					<div class="section-title">
-						<h2>Catagories</h2>
+					<!-- catagories -->
+					<div class="aside-widget ">
+						<div class="section-title">
+							<h2>Catagories</h2>
+						</div>
+						<div class="category-widget" id="category-widget">
+							<img src="/img/loader.gif" width="50px" alt="">
+						</div>
 					</div>
-					<div class="category-widget">
-						<ul>
-							<li><a href="#" class="cat-1">Web Design<span>340</span></a></li>
-							<li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
-							<li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
-							<li><a href="#" class="cat-3">CSS<span>35</span></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /catagories -->
+					<!-- /catagories -->
 
-				<!-- tags -->
-				<div class="aside-widget" id = "tags">
-					<img src="/img/loader.gif"  width="50px" alt="">
-				</div>
-				<!-- /tags -->
+					<!-- tags -->
+					<div class="aside-widget">
+						<div class="section-title">
+							<h2>Popular Tags</h2>
+						</div>
+						<div class="category-widget" id="tags">
+							<img src="/img/loader.gif" width="50px" alt="">
+						</div>
+					</div>
+					<!-- /tags -->
 
-				<!-- archive -->
-				<div class="aside-widget">
-					<div class="section-title">
-						<h2>Archive</h2>
+					<!-- archive -->
+					<div class="aside-widget">
+						<div class="section-title">
+							<h2>Archive</h2>
+						</div>
+						<div class="archive-widget">
+							<ul>
+								<li><a href="#">Jan 2018</a></li>
+								<li><a href="#">Feb 2018</a></li>
+								<li><a href="#">Mar 2018</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="archive-widget">
-						<ul>
-							<li><a href="#">Jan 2018</a></li>
-							<li><a href="#">Feb 2018</a></li>
-							<li><a href="#">Mar 2018</a></li>
-						</ul>
-					</div>
+					<!-- /archive -->
 				</div>
-				<!-- /archive -->
 			</div>
+			<!-- /row -->
 		</div>
-		<!-- /row -->
+		<!-- /container -->
 	</div>
-	<!-- /container -->
-</div>
-<!-- /section -->
+	<!-- /section -->
 
-<%- include _partials/footer %>
-<script> 
-
-$(function(){
-	$('#most-viewed-posts').load("/ajax/most-viewed");
-	$('#tags').load("/ajax/tags");
-	
-})
-
-</script>
+	<%- include _partials/footer %>
+		<script>
+			$(function () {
+				$('#most-viewed-posts').load("/ajax/most-viewed");
+				$('#tags').load("/ajax/tags");
+				$('#category-widget').load("/ajax/post-count-categorywise");
+			})
+		</script>

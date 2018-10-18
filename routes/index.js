@@ -99,14 +99,15 @@ router.get("/ajax/post-count-categorywise", async (req, res) => {
       },
       {
         $project: { "category._id": 0 }
-      },
-      { $unwind: "$category" }
+      }
+      //, { $unwind: "$category" }
     ]).exec();
 
-    res.send(categories);
   } catch (err) {
     return res.status(400).send({ error: true });
   }
+
+  res.render("_partials/categories-collection", { categories: categories });
 });
 
 module.exports = router;
