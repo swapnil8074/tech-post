@@ -20,7 +20,7 @@ router.get("/post/add", async (req, res) => {
 
 router.post(
   "/post/add",
-  upload("uploads/pictures").single("image"),
+  upload("public/uploads/pictures").single("image"),
   async (req, res, next) => {
     if (!req.body.title || !req.body.category)
       return res.send({ error: "Fields are required" });

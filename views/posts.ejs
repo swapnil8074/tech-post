@@ -17,7 +17,7 @@
 									<a class="post-category cat-2" href="<%= '/posts/'+id %>">
 										<%= posts[0].category.title %>
 									</a>
-									<!--<span class="post-date">March 27, 2018</span>-->
+									<span class="post-date">March 27, 2018</span>									
 								</div>
 								<h3 class="post-title">
 									<a href="<%= '/posts/'+catUrlName+'/'+posts[0]._id %>">
@@ -54,7 +54,7 @@
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post">
-							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>"><img src="<%= '/uploads/pictures/' + (posts[2].image)? posts[2].image : 'no-image.png' %>"
+							<a class="post-img" href="<%= '/posts/'+catUrlName+'/'+posts[2]._id %>"><img src="<%= '/uploads/pictures/' + ((posts[2].image)? posts[2].image : 'no-image.png') %>"
 								 alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
@@ -74,18 +74,17 @@
 					<!-- /post -->
 
 					<div class="clearfix visible-md visible-lg"></div>
-
 					<!-- ad -->
-					<!--<div class="col-md-12">
+					<div class="col-md-12">
 							<div class="section-row">
 								<a href="#">
 										<img class="img-responsive center-block" src="/img/ad-2.jpg" alt="">
 									</a>
 							</div>
-						</div>-->
-					<!-- ad -->
+						</div>
+					<!-- ad 
 
-					<!-- post -->
+					 post -->
 
 					<% for(i = 3; i<posts.length;i++){ %>
 					<div class="col-md-12">
@@ -130,44 +129,14 @@
 							</a>
 					</div>-->
 				<!-- /ad -->
-
-				<!-- post widget -->
 				<div class="aside-widget">
 					<div class="section-title">
 						<h2>Most Read</h2>
 					</div>
-
-					<div class="post post-widget">
-						<a class="post-img" href="blog-post.html"><img src="/img/widget-1.jpg" alt=""></a>
-						<div class="post-body">
-							<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-						</div>
-					</div>
-
-					<div class="post post-widget">
-						<a class="post-img" href="blog-post.html"><img src="/img/widget-2.jpg" alt=""></a>
-						<div class="post-body">
-							<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code
-									Automatically</a></h3>
-						</div>
-					</div>
-
-					<div class="post post-widget">
-						<a class="post-img" href="blog-post.html"><img src="/img/widget-3.jpg" alt=""></a>
-						<div class="post-body">
-							<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-						</div>
-					</div>
-
-					<div class="post post-widget">
-						<a class="post-img" href="blog-post.html"><img src="/img/widget-4.jpg" alt=""></a>
-						<div class="post-body">
-							<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-						</div>
-					</div>
+				<div id="most-viewed-posts" class="">
+					<img src="/img/loader.gif"  width="50px" alt="">
 				</div>
-				<!-- /post widget -->
-
+				</div>
 				<!-- catagories -->
 				<div class="aside-widget">
 					<div class="section-title">
@@ -185,20 +154,8 @@
 				<!-- /catagories -->
 
 				<!-- tags -->
-				<div class="aside-widget">
-					<div class="tags-widget">
-						<ul>
-							<li><a href="#">Chrome</a></li>
-							<li><a href="#">CSS</a></li>
-							<li><a href="#">Tutorial</a></li>
-							<li><a href="#">Backend</a></li>
-							<li><a href="#">JQuery</a></li>
-							<li><a href="#">Design</a></li>
-							<li><a href="#">Development</a></li>
-							<li><a href="#">JavaScript</a></li>
-							<li><a href="#">Website</a></li>
-						</ul>
-					</div>
+				<div class="aside-widget" id = "tags">
+					<img src="/img/loader.gif"  width="50px" alt="">
 				</div>
 				<!-- /tags -->
 
@@ -225,3 +182,12 @@
 <!-- /section -->
 
 <%- include _partials/footer %>
+<script> 
+
+$(function(){
+	$('#most-viewed-posts').load("/ajax/most-viewed");
+	$('#tags').load("/ajax/tags");
+	
+})
+
+</script>

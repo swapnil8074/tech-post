@@ -1,0 +1,12 @@
+<!-- post widget -->
+				<div class="tags-widget">
+						<ul>
+							<% for( let i = 0; i < tags.length; i ++ ){ %>
+					<li><a href="<%= '/posts/'+tags[i].title.replace(" ", "-").toLowerCase() %>"> <%= tags[i].title %></a></li>
+					
+                    <% } %>
+						</ul>
+					</div>
+
+
+                    

@@ -1,0 +1,10 @@
+<!-- post widget -->
+				
+                    <% for( let i = 0; i < posts.length; i ++ ){ %>
+					<div class="post post-widget">
+						<a class="post-img" href="<%= '/posts/'+posts[i].category.title.replace(" ", "-").toLowerCase()+'/'+posts[i]._id %>"><img src="<%= '/uploads/pictures/'+ ((posts[i].image)? posts[i].image : 'no-image.png') %>" alt=""></a>
+						<div class="post-body">
+							<h3 class="post-title"><a href="<%= '/posts/'+posts[i].category.title.replace(" ", "-").toLowerCase()+'/'+posts[i]._id %>"><%= posts[i].title %></a></h3>
+						</div>
+					</div>
+                    <% } %>
