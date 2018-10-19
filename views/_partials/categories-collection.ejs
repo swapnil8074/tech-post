@@ -1,0 +1,11 @@
+<!-- post widget -->
+<div class="categories-widget">
+	<ul>
+		<% for( let i = 0; i < categories.length; i ++ ){ %>
+		<li><a href="<%= '/posts/'+categories[i].category[0].title.replace(" ", " -").toLowerCase() %>">
+				<%= categories[i].category[0].title %> <span>
+					<%= categories[i].count %></span></a></li>
+
+		<% } %>
+	</ul>
+</div>
