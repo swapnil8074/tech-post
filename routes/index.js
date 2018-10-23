@@ -4,6 +4,7 @@ const Post = require("../model/post");
 const Category = require("../model/category");
 const { getIdBYcategoryName } = require("../utils/urlHelpers");
 const upload = require("../config/fileUpload");
+let ObjectId = require("mongoose").Types.ObjectId;
 
 // GET - home page
 router.get("/", (req, res) => {
@@ -41,6 +42,26 @@ router.get("/posts/:id", async (req, res) => {
   });
 });
 
+// ==============================================================================================
+// Post detail page route
+router.get("/posts/:category/:postId", async (req, res) => {
+  // validating if object id is valid
+  const postId = req.params.postId;
+  if (postId != new ObjectId(postId)) return res.redirect("/");
+  let categoryId = await getIdBYcategoryName(req.params.category);
+  let post = {};
+  post = await Post.findById(postId)
+    .populate("category", "title")
+    .exec();
+  if (!post) return redirect("/");
+  let data = {
+    post: post,
+    catUrlName: post.category.title.replace(" ", "-".toLowerCase())
+  };
+  res.render("post-detail", data);
+});
+
+// ==============================================================================================
 // partial view routes ...
 
 // Get most viewed posts
@@ -102,7 +123,6 @@ router.get("/ajax/post-count-categorywise", async (req, res) => {
       }
       //, { $unwind: "$category" }
     ]).exec();
-
   } catch (err) {
     return res.status(400).send({ error: true });
   }
